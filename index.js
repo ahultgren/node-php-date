@@ -4,11 +4,6 @@
 // He didn't want me to alter his code to work in node, so I let myself be inspired
 // by his work and found some ways to improve his stuff.
 
-var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    ds = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
 
 function CustomDate (dateInfo) {
   this.d = dateInfo ? new Date(dateInfo) : new Date();
@@ -43,19 +38,19 @@ CustomDate.prototype.getJulian = function() {
 };
 
 CustomDate.prototype.getMonthName = function() {
-  return months[this.d.getMonth()];
+  return exports.months[this.d.getMonth()];
 };
 
 CustomDate.prototype.getMonthShort = function() {
-  return mons[this.d.getMonth()];
+  return exports.mons[this.d.getMonth()];
 };
 
 CustomDate.prototype.getDayName = function() {
-  return days[this.d.getDay()];
+  return exports.days[this.d.getDay()];
 };
 
 CustomDate.prototype.getDayShort = function() {
-  return ds[this.d.getDay()];
+  return exports.ds[this.d.getDay()];
 };
 
 CustomDate.prototype.getOrdinal = function() {
@@ -263,4 +258,9 @@ CustomDate.prototype.format = function(f) {
   return res;
 };
 
-module.exports = CustomDate;
+module.exports = exports = CustomDate;
+
+exports.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+exports.mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+exports.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+exports.ds = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
