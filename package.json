@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "name": "node-php-date",
+  "author": "Andreas Hultgren",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "Php-style dates",
+  "main": "index.js",
+  "license": "MIT"
+}
