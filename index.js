@@ -93,6 +93,14 @@ CustomDate.prototype.getSwatch = function() {
   return Math.floor(swatch*1000/24);
 };
 
+CustomDate.prototype.toString = function() {
+  return this.d.toString();
+};
+
+CustomDate.prototype.toValue = function() {
+  return this.d.toValue();
+};
+
 CustomDate.prototype.format = function(f) {
   var fmt = f.split(''),
       res = '',
